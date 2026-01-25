@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en-GB">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Coach | Harry's Personal Training</title>
+		<meta
+			name="description"
+			content="Meet Harry Cochrane - your personal trainer in Jersey. Qualified, experienced, and dedicated to your success." />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+			  theme: {
+			    extend: {
+			      colors: {
+			        background: '#0a0a0a',
+			        foreground: '#ffffff',
+			        lime: '#c8ff00',
+			        'lime-dark': '#a3cc00',
+			        'card-bg': '#1a1a1a',
+			        'outer-bg': '#8a8a6c',
+			      },
+			      fontFamily: {
+			        display: ['Bebas Neue', 'Arial Narrow', 'sans-serif'],
+			        sans: ['Inter', 'system-ui', 'sans-serif'],
+			      },
+			    },
+			  },
+			}
+		</script>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body class="bg-[#0a0a0a] text-gray-300 font-sans">
+		<!-- Navigation -->
+		<nav
+			id="navbar"
+			class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-gray-900/50">
+			<div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+				<div class="flex items-center justify-between h-20">
+					<a href="index.html" class="flex items-center gap-3">
+						<img
+							src="logo.png"
+							alt="Harry's Logo"
+							class="h-12 w-auto logo-img"
+							style="image-rendering: -webkit-optimize-contrast;" />
+					</a>
+					<div class="hidden lg:flex items-center gap-10">
+						<a
+							href="training.html"
+							class="nav-link text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Training</a
+						>
+						<a
+							href="timetable.html"
+							class="nav-link text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Schedule</a
+						>
+						<a
+							href="results.html"
+							class="nav-link text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Results</a
+						>
+						<a
+							href="coach.html"
+							class="nav-link active text-xs font-medium tracking-widest text-white transition-colors uppercase"
+							>Coach</a
+						>
+						<a
+							href="contact.html"
+							class="nav-link text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Contact</a
+						>
+					</div>
+					<div class="hidden lg:block">
+						<a
+							href="book-consultation.html"
+							class="btn-lime text-xs font-semibold tracking-widest uppercase"
+							>Get Fit Now</a
+						>
+					</div>
+					<button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+						<div class="space-y-1.5">
+							<span
+								class="block w-6 h-0.5 bg-white transition-all hamburger-line-1"></span>
+							<span
+								class="block w-6 h-0.5 bg-white transition-all hamburger-line-2"></span>
+							<span
+								class="block w-6 h-0.5 bg-white transition-all hamburger-line-3"></span>
+						</div>
+					</button>
+				</div>
+				<div
+					id="mobile-menu"
+					class="lg:hidden hidden absolute top-20 left-0 right-0 bg-[#0a0a0a] border-t border-gray-900">
+					<div class="container mx-auto px-6 py-8 space-y-6">
+						<a
+							href="training.html"
+							class="block text-sm font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Training</a
+						>
+						<a
+							href="timetable.html"
+							class="block text-sm font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Schedule</a
+						>
+						<a
+							href="results.html"
+							class="block text-sm font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Results</a
+						>
+						<a
+							href="coach.html"
+							class="block text-sm font-medium tracking-widest text-white uppercase"
+							>Coach</a
+						>
+						<a
+							href="contact.html"
+							class="block text-sm font-medium tracking-widest text-gray-400 hover:text-white transition-colors uppercase"
+							>Contact</a
+						>
+						<a
+							href="book-consultation.html"
+							class="inline-block btn-lime text-sm font-semibold tracking-widest uppercase mt-4"
+							>Get Fit Now</a
+						>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<main class="pt-20">
+			<!-- Page Header -->
+			<section class="py-16 border-b border-gray-900">
+				<div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+					<div class="flex items-center mb-4">
+						<div class="triple-lines"><span></span></div>
+						<h1
+							class="font-display text-5xl md:text-7xl text-white tracking-wide">
+							COACH
+						</h1>
+					</div>
+					<p class="text-gray-400 max-w-xl">
+						Meet your trainer. Qualified, experienced, and dedicated to your
+						success.
+					</p>
+				</div>
+			</section>
+
+			<!-- Coach Bio -->
+			<section class="py-20">
+				<div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+					<div class="grid lg:grid-cols-2 gap-16 items-start">
+						<div>
+							<h2 class="font-display text-4xl text-white mb-2 tracking-wide">
+								HARRY COCHRANE
+							</h2>
+							<p class="text-lime tracking-widest text-sm mb-8">
+								PERSONAL TRAINER
+							</p>
+
+							<div class="space-y-6 text-gray-400 leading-relaxed">
+								<p>
+									I've been involved in fitness and sport my entire life. From
+									competitive rugby to strength training, I've experienced
+									firsthand the transformative power of dedicated physical
+									training.
+								</p>
+								<p>
+									After years of training myself and helping friends reach their
+									goals, I decided to make it official. I qualified as a
+									personal trainer because I believe everyone deserves access to
+									quality coaching - not just elite athletes.
+								</p>
+								<p>
+									My approach is simple: build sustainable habits through
+									consistent, intelligent training. No fads, no shortcuts - just
+									proven methods that work. Whether you're a complete beginner
+									or an experienced lifter, I'll meet you where you are and help
+									you get to where you want to be.
+								</p>
+							</div>
+						</div>
+
+						<div class="card-rounded-lg card-glow p-8">
+							<h3 class="font-display text-2xl text-white mb-8 tracking-wide">
+								QUALIFICATIONS
+							</h3>
+							<ul class="space-y-4">
+								<li class="flex items-start">
+									<span class="text-lime mr-4">&rarr;</span>
+									<span class="text-gray-400"
+										>Level 3 Personal Training Certification</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-lime mr-4">&rarr;</span>
+									<span class="text-gray-400"
+										>Strength & Conditioning Specialist</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-lime mr-4">&rarr;</span>
+									<span class="text-gray-400"
+										>Nutrition for Sport & Exercise</span
+									>
+								</li>
+								<li class="flex items-start">
+									<span class="text-lime mr-4">&rarr;</span>
+									<span class="text-gray-400">First Aid Certified</span>
+								</li>
+								<li class="flex items-start">
+									<span class="text-lime mr-4">&rarr;</span>
+									<span class="text-gray-400"
+										>CPD: Functional Movement Screening</span
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Philosophy -->
+			<section class="py-20 border-t border-gray-900 bg-[#111111]">
+				<div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+					<div class="flex items-center justify-center mb-12">
+						<div class="triple-lines"><span></span></div>
+						<h2 class="font-display text-4xl text-white tracking-wide">
+							MY PHILOSOPHY
+						</h2>
+					</div>
+
+					<div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+						<div class="card-rounded-lg p-6 text-center">
+							<div class="icon-badge mx-auto mb-4">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									class="w-5 h-5">
+									<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+								</svg>
+							</div>
+							<h3 class="font-display text-2xl text-white mb-4 tracking-wide">
+								CONSISTENCY
+							</h3>
+							<p class="text-gray-400 text-sm">
+								Small efforts compounded over time beat sporadic intensity. We
+								build habits that last.
+							</p>
+						</div>
+
+						<div class="card-rounded-lg p-6 text-center">
+							<div class="icon-badge mx-auto mb-4">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									class="w-5 h-5">
+									<path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+								</svg>
+							</div>
+							<h3 class="font-display text-2xl text-white mb-4 tracking-wide">
+								PROGRESSION
+							</h3>
+							<p class="text-gray-400 text-sm">
+								Every session should move you forward. Measurable progress keeps
+								you motivated.
+							</p>
+						</div>
+
+						<div class="card-rounded-lg p-6 text-center">
+							<div class="icon-badge mx-auto mb-4">
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									class="w-5 h-5">
+									<path
+										d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+								</svg>
+							</div>
+							<h3 class="font-display text-2xl text-white mb-4 tracking-wide">
+								ENJOYMENT
+							</h3>
+							<p class="text-gray-400 text-sm">
+								Training should enhance your life, not dominate it. Find joy in
+								the process.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- CTA Section -->
+			<section class="py-20 border-t border-gray-900">
+				<div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+					<div class="max-w-2xl mx-auto text-center">
+						<div class="flex items-center justify-center mb-6">
+							<div class="triple-lines"><span></span></div>
+							<h2 class="font-display text-4xl text-white tracking-wide">
+								LET'S WORK TOGETHER
+							</h2>
+						</div>
+						<p class="text-gray-400 mb-10">
+							Ready to start your fitness journey? Book a free consultation and
+							let's discuss your goals.
+						</p>
+						<a
+							href="book-consultation.html"
+							class="inline-block btn-lime text-sm font-semibold tracking-widest uppercase"
+							>Book Free Consultation</a
+						>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="border-t border-gray-900">
+			<div class="container mx-auto px-6 sm:px-8 lg:px-12 max-w-6xl py-16">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+					<div class="md:col-span-2">
+						<img
+							src="logo.png"
+							alt="Harry's Logo"
+							class="h-16 w-auto mb-6 logo-img"
+							style="image-rendering: -webkit-optimize-contrast;" />
+						<p class="text-gray-600 text-sm mb-6 max-w-sm">
+							Premium personal training and functional fitness in Jersey.
+							Transform your body and mind with expert coaching.
+						</p>
+						<div class="flex gap-4">
+							<a
+								href="#"
+								class="text-gray-600 hover:text-white transition-colors">
+								<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+									<path
+										d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+								</svg>
+							</a>
+							<a
+								href="#"
+								class="text-gray-600 hover:text-white transition-colors">
+								<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+									<path
+										d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z" />
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div>
+						<h4
+							class="font-semibold text-gray-400 mb-4 uppercase tracking-widest text-xs">
+							Quick Links
+						</h4>
+						<ul class="space-y-3">
+							<li>
+								<a
+									href="training.html"
+									class="text-gray-600 hover:text-white transition-colors text-sm"
+									>Training</a
+								>
+							</li>
+							<li>
+								<a
+									href="timetable.html"
+									class="text-gray-600 hover:text-white transition-colors text-sm"
+									>Schedule</a
+								>
+							</li>
+							<li>
+								<a
+									href="results.html"
+									class="text-gray-600 hover:text-white transition-colors text-sm"
+									>Results</a
+								>
+							</li>
+							<li>
+								<a
+									href="coach.html"
+									class="text-gray-600 hover:text-white transition-colors text-sm"
+									>Coach</a
+								>
+							</li>
+							<li>
+								<a
+									href="contact.html"
+									class="text-gray-600 hover:text-white transition-colors text-sm"
+									>Contact</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4
+							class="font-semibold text-gray-400 mb-4 uppercase tracking-widest text-xs">
+							Contact
+						</h4>
+						<ul class="space-y-3 text-gray-600 text-sm">
+							<li>Jersey, Channel Islands</li>
+							<li>
+								<a
+									href="tel:+447700900000"
+									class="hover:text-white transition-colors"
+									>07700 900000</a
+								>
+							</li>
+							<li>
+								<a
+									href="mailto:hello@harrys.je"
+									class="hover:text-white transition-colors"
+									>hello@harrys.je</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mt-16 pt-8 border-t border-gray-900">
+					<div
+						class="flex flex-col md:flex-row justify-between items-center gap-4">
+						<p class="text-gray-700 text-xs" id="copyright"></p>
+						<div class="flex gap-6 text-xs">
+							<a
+								href="#"
+								class="text-gray-700 hover:text-white transition-colors"
+								>Privacy Policy</a
+							>
+							<a
+								href="#"
+								class="text-gray-700 hover:text-white transition-colors"
+								>Terms & Conditions</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
