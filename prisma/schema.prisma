@@ -1,0 +1,263 @@
+// Prisma schema for Harry's Personal Training
+// https://pris.ly/d/prisma-schema
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// User model - syncs with Supabase Auth
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  firstName String?
+  lastName  String?
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders          Order[]
+  bodyStats       BodyStat[]
+  dailyLogs       DailyLog[]
+  workoutLogs     WorkoutLog[]
+  creditPurchases CreditPurchase[]
+}
+
+// Session types (Power Play, Lift and Shift)
+model SessionType {
+  id          String    @id @default(uuid())
+  name        String    // "POWER PLAY", "LIFT AND SHIFT"
+  description String?
+  sessions    Session[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+// Individual session time slots
+model Session {
+  id            String      @id @default(uuid())
+  sessionTypeId String
+  sessionType   SessionType @relation(fields: [sessionTypeId], references: [id])
+  dayOfWeek     Int         // 0=Sunday, 1=Monday, etc.
+  startTime     String      // "06:15"
+  endTime       String      // "07:00"
+  maxCapacity   Int         @default(10)
+  isPrivate     Boolean     @default(false)
+  bookings      Booking[]
+  orderItems    OrderItem[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([dayOfWeek])
+}
+
+// Orders for payment tracking
+model Order {
+  id                    String      @id @default(uuid())
+  userId                String?
+  user                  User?       @relation(fields: [userId], references: [id])
+  guestEmail            String?     // For guest checkout
+  guestName             String?
+  totalAmount           Decimal     @db.Decimal(10, 2)
+  currency              String      @default("GBP")
+  status                OrderStatus @default(PENDING)
+  sumupCheckoutId       String?
+  sumupReference        String      @unique
+  creditPackageId       String?     // For credit package purchases
+  creditPackage         CreditPackage? @relation(fields: [creditPackageId], references: [id])
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+  paidAt                DateTime?
+  bookings              Booking[]
+  orderItems            OrderItem[]
+  creditPurchase        CreditPurchase?
+
+  @@index([status])
+  @@index([userId])
+}
+
+// Order items - stores basket items with the order
+model OrderItem {
+  id          String   @id @default(uuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  sessionId   String
+  session     Session  @relation(fields: [sessionId], references: [id])
+  sessionDate DateTime
+  price       Decimal  @db.Decimal(10, 2)
+  createdAt   DateTime @default(now())
+
+  @@index([orderId])
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+  CANCELLED
+}
+
+// Individual session bookings within an order
+model Booking {
+  id          String       @id @default(uuid())
+  orderId     String?      // Optional - null when booked with credits
+  order       Order?       @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  sessionId   String
+  session     Session      @relation(fields: [sessionId], references: [id])
+  date        DateTime     // Specific date of the session (e.g., 2025-01-27)
+  createdAt   DateTime     @default(now())
+  creditUsage CreditUsage?
+
+  @@unique([sessionId, date, orderId]) // Prevent duplicate bookings
+  @@index([date])
+  @@index([sessionId])
+}
+
+// Site configuration (session price, etc.)
+model SiteConfig {
+  id           String   @id @default("default")
+  sessionPrice Decimal  @db.Decimal(10, 2) @default(15.00)
+  currency     String   @default("GBP")
+  updatedAt    DateTime @updatedAt
+}
+
+// ==========================================
+// Fitness Tracking Models
+// ==========================================
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+// Body stats with history tracking
+model BodyStat {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  weight     Decimal? @db.Decimal(5, 2) // kg
+  height     Decimal? @db.Decimal(5, 2) // cm
+  age        Int?
+  gender     Gender?
+  chest      Decimal? @db.Decimal(5, 2) // cm
+  waist      Decimal? @db.Decimal(5, 2)
+  hips       Decimal? @db.Decimal(5, 2)
+  leftArm    Decimal? @db.Decimal(5, 2)
+  rightArm   Decimal? @db.Decimal(5, 2)
+  leftLeg    Decimal? @db.Decimal(5, 2)
+  rightLeg   Decimal? @db.Decimal(5, 2)
+  bodyFatPct Decimal? @db.Decimal(4, 2) // percentage
+  recordedAt DateTime @default(now())
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+  @@index([recordedAt])
+}
+
+// Daily activity logs
+model DailyLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date      DateTime @db.Date
+  steps     Int?
+  calories  Int?
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, date])
+  @@index([userId])
+  @@index([date])
+}
+
+// Workout logs
+model WorkoutLog {
+  id          String            @id @default(uuid())
+  userId      String
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date        DateTime
+  workoutType String
+  duration    Int? // minutes
+  notes       String?
+  exercises   WorkoutExercise[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@index([userId])
+  @@index([date])
+}
+
+// Exercises within a workout
+model WorkoutExercise {
+  id           String     @id @default(uuid())
+  workoutLogId String
+  workoutLog   WorkoutLog @relation(fields: [workoutLogId], references: [id], onDelete: Cascade)
+  name         String
+  sets         Int?
+  reps         Int?
+  weight       Decimal?   @db.Decimal(6, 2) // kg
+  duration     Int? // seconds (for timed exercises)
+  notes        String?
+  orderIndex   Int        @default(0)
+
+  @@index([workoutLogId])
+}
+
+// ==========================================
+// Credit System Models
+// ==========================================
+
+// Credit packages available for purchase
+model CreditPackage {
+  id           String   @id @default(cuid())
+  name         String   // "5 Session Pack", "10 Session Pack"
+  sessionCount Int      // Number of credits included
+  price        Decimal  @db.Decimal(10, 2)
+  isActive     Boolean  @default(true)
+  sortOrder    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  purchases CreditPurchase[]
+  orders    Order[]  // Orders that purchased this package
+}
+
+// User's credit purchase records
+model CreditPurchase {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  packageId        String
+  package          CreditPackage @relation(fields: [packageId], references: [id])
+  orderId          String?  @unique // Links to payment Order
+  order            Order?   @relation(fields: [orderId], references: [id])
+  creditsReceived  Int
+  creditsRemaining Int
+  expiresAt        DateTime
+  createdAt        DateTime @default(now())
+
+  usages CreditUsage[]
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// Tracks credit usage for each booking
+model CreditUsage {
+  id               String         @id @default(cuid())
+  creditPurchaseId String
+  creditPurchase   CreditPurchase @relation(fields: [creditPurchaseId], references: [id])
+  bookingId        String         @unique
+  booking          Booking        @relation(fields: [bookingId], references: [id])
+  creditsUsed      Int            @default(1)
+  createdAt        DateTime       @default(now())
+
+  @@index([creditPurchaseId])
+}
