@@ -1,72 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
 :root {
-  /* Core colors */
-  --black: #000000;
-  --white: #ffffff;
+	/* Core colors */
+	--black: #000000;
+	--white: #ffffff;
 
-  /* Grays */
-  --gray-100: #f5f5f5;
-  --gray-200: #e5e5e5;
-  --gray-300: #d4d4d4;
-  --gray-400: #a3a3a3;
-  --gray-500: #737373;
-  --gray-600: #525252;
-  --gray-700: #404040;
-  --gray-800: #262626;
-  --gray-900: #171717;
+	/* Grays */
+	--gray-100: #f5f5f5;
+	--gray-200: #e5e5e5;
+	--gray-300: #d4d4d4;
+	--gray-400: #a3a3a3;
+	--gray-500: #737373;
+	--gray-600: #525252;
+	--gray-700: #404040;
+	--gray-800: #262626;
+	--gray-900: #171717;
 
-  /* New accent colors */
-  --lime: #c8ff00;
-  --lime-dark: #a3cc00;
-  --lime-glow: rgba(200, 255, 0, 0.15);
+	/* New accent colors */
+	--lime: #c8ff00;
+	--lime-dark: #a3cc00;
+	--lime-glow: rgba(200, 255, 0, 0.15);
 
-  /* Card & background colors */
-  --card-bg: #1a1a1a;
-  --card-bg-hover: #222222;
-  --outer-bg: #8a8a6c;
-  --body-bg: #0a0a0a;
+	/* Card & background colors */
+	--card-bg: #1a1a1a;
+	--card-bg-hover: #222222;
+	--outer-bg: #8a8a6c;
+	--body-bg: #0a0a0a;
 
-  /* Spacing & sizing */
-  --card-radius: 1rem;
-  --card-radius-lg: 1.5rem;
+	/* Spacing & sizing */
+	--card-radius: 1rem;
+	--card-radius-lg: 1.5rem;
 
-  /* Hero text responsive sizing */
-  --hero-text-size: clamp(7.5rem, 33vw, 30rem);
+	/* Hero text responsive sizing */
+	--hero-text-size: clamp(7.5rem, 33vw, 30rem);
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--body-bg);
-  color: var(--gray-300);
+	background-color: var(--body-bg);
+	color: var(--gray-300);
 }
 
 /* Typography */
 .font-display {
-  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  letter-spacing: 0.05em;
+	font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+	letter-spacing: 0.05em;
 }
 
 /* Hero title - massive responsive text */
 .hero-title {
-  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  font-size: clamp(4rem, 18vw, 20rem);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  color: var(--white);
-  text-align: center;
+	font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+	font-size: clamp(4rem, 18vw, 20rem);
+	line-height: 0.9;
+	letter-spacing: 0.02em;
+	color: var(--white);
+	text-align: center;
 }
 
 /* Script/italic accent text */
 .accent-script {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-style: italic;
-  color: var(--lime);
+	font-family: "Georgia", "Times New Roman", serif;
+	font-style: italic;
+	color: var(--lime);
 }
 
 /* ================================
@@ -74,76 +74,76 @@ body {
    ================================ */
 
 .text-lime {
-  color: var(--lime);
+	color: var(--lime);
 }
 
 .bg-lime {
-  background-color: var(--lime);
-  color: var(--black);
+	background-color: var(--lime);
+	color: var(--black);
 }
 
 .border-lime {
-  border-color: var(--lime);
+	border-color: var(--lime);
 }
 
 /* Lime primary button */
 .btn-lime {
-  background-color: var(--lime);
-  color: var(--black);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  padding: 0.875rem 2rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+	background-color: var(--lime);
+	color: var(--black);
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	padding: 0.875rem 2rem;
+	border-radius: 9999px;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .btn-lime:hover {
-  background-color: var(--lime-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px var(--lime-glow);
+	background-color: var(--lime-dark);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 30px var(--lime-glow);
 }
 
 /* Lime outline button */
 .btn-lime-outline {
-  border: 1px solid var(--lime);
-  color: var(--lime);
-  background: transparent;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  padding: 0.875rem 2rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+	border: 1px solid var(--lime);
+	color: var(--lime);
+	background: transparent;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	padding: 0.875rem 2rem;
+	border-radius: 9999px;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .btn-lime-outline:hover {
-  background-color: var(--lime);
-  color: var(--black);
+	background-color: var(--lime);
+	color: var(--black);
 }
 
 /* Secondary button (outline style) */
 .btn-secondary {
-  border: 1px solid var(--gray-700);
-  color: var(--white);
-  background: transparent;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  padding: 0.875rem 2rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+	border: 1px solid var(--gray-700);
+	color: var(--white);
+	background: transparent;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	padding: 0.875rem 2rem;
+	border-radius: 9999px;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .btn-secondary:hover {
-  border-color: var(--gray-500);
-  background-color: var(--gray-900);
+	border-color: var(--gray-500);
+	background-color: var(--gray-900);
 }
 
 /* ================================
@@ -151,28 +151,28 @@ body {
    ================================ */
 
 .triple-lines {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  margin-right: 0.75rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	margin-right: 0.75rem;
 }
 
 .triple-lines::before,
 .triple-lines::after {
-  content: '';
-  display: block;
-  width: 3px;
-  height: 1.2em;
-  background-color: var(--lime);
-  transform: skewX(-12deg);
+	content: "";
+	display: block;
+	width: 3px;
+	height: 1.2em;
+	background-color: var(--lime);
+	transform: skewX(-12deg);
 }
 
 .triple-lines span {
-  display: block;
-  width: 3px;
-  height: 1.2em;
-  background-color: var(--lime);
-  transform: skewX(-12deg);
+	display: block;
+	width: 3px;
+	height: 1.2em;
+	background-color: var(--lime);
+	transform: skewX(-12deg);
 }
 
 /* ================================
@@ -180,12 +180,12 @@ body {
    ================================ */
 
 .quote-mark {
-  font-family: 'Georgia', serif;
-  font-size: 4rem;
-  line-height: 1;
-  color: var(--lime);
-  display: block;
-  margin-bottom: 1rem;
+	font-family: "Georgia", serif;
+	font-size: 4rem;
+	line-height: 1;
+	color: var(--lime);
+	display: block;
+	margin-bottom: 1rem;
 }
 
 /* ================================
@@ -193,45 +193,45 @@ body {
    ================================ */
 
 .card-rounded {
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius);
-  transition: all 0.3s ease;
+	background-color: var(--card-bg);
+	border-radius: var(--card-radius);
+	transition: all 0.3s ease;
 }
 
 .card-rounded:hover {
-  background-color: var(--card-bg-hover);
+	background-color: var(--card-bg-hover);
 }
 
 .card-rounded-lg {
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius-lg);
-  transition: all 0.3s ease;
+	background-color: var(--card-bg);
+	border-radius: var(--card-radius-lg);
+	transition: all 0.3s ease;
 }
 
 .card-rounded-lg:hover {
-  background-color: var(--card-bg-hover);
+	background-color: var(--card-bg-hover);
 }
 
 /* Card with lime hover glow */
 .card-glow:hover {
-  box-shadow: 0 0 40px var(--lime-glow);
+	box-shadow: 0 0 40px var(--lime-glow);
 }
 
 /* Icon badge with lime background */
 .icon-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  background-color: var(--lime);
-  border-radius: 0.75rem;
-  color: var(--black);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	background-color: var(--lime);
+	border-radius: 0.75rem;
+	color: var(--black);
 }
 
 .icon-badge svg {
-  width: 1.5rem;
-  height: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
 }
 
 /* ================================
@@ -239,27 +239,27 @@ body {
    ================================ */
 
 .section-padding {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
-  .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+	.section-padding {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
 }
 
 .section-padding-lg {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
-  .section-padding-lg {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
+	.section-padding-lg {
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
 }
 
 /* ================================
@@ -267,23 +267,23 @@ body {
    ================================ */
 
 .nav-link {
-  position: relative;
+	position: relative;
 }
 
 .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--lime);
-  transition: width 0.3s ease;
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--lime);
+	transition: width 0.3s ease;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+	width: 100%;
 }
 
 /* ================================
@@ -291,8 +291,8 @@ body {
    ================================ */
 
 .divider-lime {
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--lime), transparent);
+	height: 2px;
+	background: linear-gradient(to right, transparent, var(--lime), transparent);
 }
 
 /* ================================
@@ -300,56 +300,56 @@ body {
    ================================ */
 
 .instagram-gallery {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto;
+	padding-bottom: 1rem;
+	scroll-snap-type: x mandatory;
 }
 
 .instagram-gallery::-webkit-scrollbar {
-  height: 4px;
+	height: 4px;
 }
 
 .instagram-gallery::-webkit-scrollbar-thumb {
-  background: var(--lime);
-  border-radius: 2px;
+	background: var(--lime);
+	border-radius: 2px;
 }
 
 .instagram-item {
-  flex: 0 0 auto;
-  width: 280px;
-  aspect-ratio: 1;
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  scroll-snap-align: start;
-  position: relative;
+	flex: 0 0 auto;
+	width: 280px;
+	aspect-ratio: 1;
+	border-radius: var(--card-radius);
+	overflow: hidden;
+	scroll-snap-align: start;
+	position: relative;
 }
 
 .instagram-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
 }
 
 .instagram-item:hover img {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .instagram-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
 }
 
 .instagram-item:hover .instagram-overlay {
-  opacity: 1;
+	opacity: 1;
 }
 
 /* ================================
@@ -357,33 +357,33 @@ body {
    ================================ */
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
 }
 
 @keyframes scroll-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(6px);
-    opacity: 0.5;
-  }
+	0%,
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(6px);
+		opacity: 0.5;
+	}
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+	animation: float 3s ease-in-out infinite;
 }
 
 .scroll-indicator {
-  animation: scroll-bounce 1.5s ease-in-out infinite;
+	animation: scroll-bounce 1.5s ease-in-out infinite;
 }
 
 /* ================================
@@ -391,23 +391,23 @@ body {
    ================================ */
 
 .newsletter-section {
-  background-color: var(--lime);
-  color: var(--black);
-  border-radius: var(--card-radius-lg);
+	background-color: var(--lime);
+	color: var(--black);
+	border-radius: var(--card-radius-lg);
 }
 
 .newsletter-section input {
-  background-color: var(--white);
-  border: none;
+	background-color: var(--white);
+	border: none;
 }
 
 .newsletter-section button {
-  background-color: var(--black);
-  color: var(--white);
+	background-color: var(--black);
+	color: var(--white);
 }
 
 .newsletter-section button:hover {
-  background-color: var(--gray-800);
+	background-color: var(--gray-800);
 }
 
 /* ================================
@@ -415,30 +415,30 @@ body {
    ================================ */
 
 .pricing-card {
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius-lg);
-  overflow: hidden;
-  transition: all 0.3s ease;
+	background-color: var(--card-bg);
+	border-radius: var(--card-radius-lg);
+	overflow: hidden;
+	transition: all 0.3s ease;
 }
 
 .pricing-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+	transform: translateY(-8px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .pricing-card-featured {
-  border: 2px solid var(--lime);
+	border: 2px solid var(--lime);
 }
 
 .pricing-card .price {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
-  color: var(--white);
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 3rem;
+	color: var(--white);
 }
 
 .pricing-card .price span {
-  font-size: 1rem;
-  color: var(--gray-400);
+	font-size: 1rem;
+	color: var(--gray-400);
 }
 
 /* ================================
@@ -446,41 +446,41 @@ body {
    ================================ */
 
 .testimonial-card {
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius-lg);
-  padding: 2rem;
+	background-color: var(--card-bg);
+	border-radius: var(--card-radius-lg);
+	padding: 2rem;
 }
 
 .testimonial-card .quote-mark {
-  color: var(--lime);
-  font-size: 3rem;
-  margin-bottom: 1rem;
+	color: var(--lime);
+	font-size: 3rem;
+	margin-bottom: 1rem;
 }
 
 .testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1.5rem;
 }
 
 .testimonial-author img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  object-fit: cover;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 .testimonial-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--lime);
-  border-radius: 50%;
-  font-size: 0.75rem;
-  margin-left: 0.5rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: var(--lime);
+	border-radius: 50%;
+	font-size: 0.75rem;
+	margin-left: 0.5rem;
 }
 
 /* ================================
@@ -488,17 +488,17 @@ body {
    ================================ */
 
 .footer-dark {
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius-lg) var(--card-radius-lg) 0 0;
+	background-color: var(--card-bg);
+	border-radius: var(--card-radius-lg) var(--card-radius-lg) 0 0;
 }
 
 .footer-link {
-  color: var(--gray-400);
-  transition: color 0.2s ease;
+	color: var(--gray-400);
+	transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-  color: var(--lime);
+	color: var(--lime);
 }
 
 /* ================================
@@ -506,45 +506,45 @@ body {
    ================================ */
 
 @media (min-width: 480px) {
-  .hero-title {
-    font-size: clamp(5rem, 18vw, 20rem);
-  }
+	.hero-title {
+		font-size: clamp(5rem, 18vw, 20rem);
+	}
 }
 
 @media (min-width: 640px) {
-  .hero-title {
-    font-size: clamp(6rem, 16vw, 20rem);
-  }
+	.hero-title {
+		font-size: clamp(6rem, 16vw, 20rem);
+	}
 }
 
 @media (min-width: 768px) {
-  .hero-title {
-    font-size: clamp(8rem, 15vw, 20rem);
-  }
+	.hero-title {
+		font-size: clamp(8rem, 15vw, 20rem);
+	}
 }
 
 @media (min-width: 1024px) {
-  .hero-title {
-    font-size: clamp(10rem, 14vw, 20rem);
-  }
+	.hero-title {
+		font-size: clamp(10rem, 14vw, 20rem);
+	}
 }
 
 @media (min-width: 1280px) {
-  .hero-title {
-    font-size: 14rem;
-  }
+	.hero-title {
+		font-size: 14rem;
+	}
 }
 
 @media (min-width: 1536px) {
-  .hero-title {
-    font-size: 16rem;
-  }
+	.hero-title {
+		font-size: 16rem;
+	}
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
-  .hero-title {
-    font-size: clamp(3rem, 18vh, 8rem);
-  }
+	.hero-title {
+		font-size: clamp(3rem, 18vh, 8rem);
+	}
 }
 
 /* ================================
@@ -552,32 +552,181 @@ body {
    ================================ */
 
 .day-name {
-  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  color: var(--lime);
+	font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.1em;
+	color: var(--lime);
 }
 
 .day-number {
-  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  font-size: 3rem;
-  line-height: 1;
-  color: var(--white);
+	font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+	font-size: 3rem;
+	line-height: 1;
+	color: var(--white);
 }
 
 .program-name {
-  font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
-  letter-spacing: 0.05em;
-  color: var(--white);
+	font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+	letter-spacing: 0.05em;
+	color: var(--white);
 }
 
 .time-box {
-  background-color: var(--card-bg);
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
+	background-color: var(--card-bg);
+	border-radius: 0.5rem;
+	padding: 0.75rem 1rem;
 }
 
 .time-text {
-  color: var(--gray-400);
-  font-size: 0.875rem;
+	color: var(--gray-400);
+	font-size: 0.875rem;
+}
+
+/* ================================
+   REACT DATEPICKER STYLING
+   ================================ */
+
+/* DatePicker input styling */
+.react-datepicker-wrapper {
+	width: 100%;
+}
+
+.react-datepicker__input-container {
+	width: 100%;
+}
+
+.react-datepicker__input-container input {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--gray-900);
+	border: 1px solid var(--gray-700);
+	color: var(--white);
+	font-size: 1rem;
+	transition: border-color 0.3s ease;
+}
+
+.react-datepicker__input-container input:focus {
+	border-color: var(--lime);
+	outline: none;
+}
+
+.react-datepicker__input-container input::placeholder {
+	color: var(--gray-500);
+}
+
+/* DatePicker calendar popup styling */
+.react-datepicker {
+	font-family: inherit;
+	border: 1px solid var(--gray-700);
+	border-radius: 0.5rem;
+	background-color: var(--gray-900);
+	color: var(--white);
+}
+
+.react-datepicker__header {
+	background-color: var(--card-bg);
+	border-bottom: 1px solid var(--gray-700);
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	padding-top: 0.75rem;
+}
+
+.react-datepicker__current-month {
+	color: var(--white);
+	font-weight: 600;
+	font-size: 0.875rem;
+	padding-bottom: 0.5rem;
+}
+
+.react-datepicker__day-names {
+	display: flex;
+	justify-content: space-around;
+	padding: 0.5rem 0;
+}
+
+.react-datepicker__day-name {
+	color: var(--gray-400);
+	font-size: 0.75rem;
+	font-weight: 500;
+	width: 2rem;
+	line-height: 2rem;
+}
+
+.react-datepicker__month {
+	margin: 0.5rem;
+	padding: 0.5rem 0;
+}
+
+.react-datepicker__week {
+	display: flex;
+	justify-content: space-around;
+}
+
+.react-datepicker__day {
+	color: var(--white);
+	width: 2rem;
+	line-height: 2rem;
+	border-radius: 0.25rem;
+	margin: 0.125rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.react-datepicker__day:hover {
+	background-color: var(--gray-800);
+	color: var(--white);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+	background-color: var(--lime);
+	color: var(--black);
+	font-weight: 600;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+	background-color: var(--lime-dark);
+}
+
+.react-datepicker__day--disabled {
+	color: var(--gray-600);
+	cursor: not-allowed;
+}
+
+.react-datepicker__day--disabled:hover {
+	background-color: transparent;
+}
+
+.react-datepicker__day--outside-month {
+	color: var(--gray-600);
+}
+
+.react-datepicker__navigation {
+	top: 0.75rem;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 0.25rem;
+	transition: background-color 0.2s ease;
+}
+
+.react-datepicker__navigation:hover {
+	background-color: var(--gray-800);
+}
+
+.react-datepicker__navigation-icon::before {
+	border-color: var(--gray-400);
+}
+
+.react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+	border-color: var(--lime);
+}
+
+.react-datepicker__triangle {
+	border-bottom-color: var(--gray-900) !important;
+}
+
+.react-datepicker__triangle::before {
+	border-bottom-color: var(--gray-700) !important;
 }
