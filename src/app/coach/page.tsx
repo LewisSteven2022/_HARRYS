@@ -5,29 +5,60 @@ export default function Coach() {
 	return (
 		<>
 			{/* Hero Section */}
-			<section className="relative min-h-[80vh] flex items-center overflow-hidden">
+			<section className="relative min-h-[80vh] flex items-center justify-center lg:items-start lg:justify-end overflow-hidden">
 				<div className="absolute inset-0 z-0">
 					<div className="rounded-full absolute inset-0 bg-opacity-100 z10"></div>
-					<Image
-						src="/images/harry-2.jpeg"
-						alt="Harry - Founder of Harry's JSY"
-						fill
-						className="w-full h-full object-cover object-top brightness-100"
-						style={{ objectPosition: "center 8%" }}
-						priority
-					/>
+					<div className="absolute inset-0">
+						<Image
+							src="/images/harry-2.jpeg"
+							alt="Harry - Founder of Harry's JSY"
+							fill
+							className="w-full h-full object-cover object-top brightness-100 opacity-40"
+							style={{ objectPosition: "center 8%" }}
+							priority
+						/>
+					</div>
+					{/* Top right blur overlay - desktop only */}
+					<div
+						className="hidden lg:block absolute top-0 right-0 w-1/2 h-1/2 z-1"
+						style={{
+							background:
+								"linear-gradient(to right, transparent 100%, rgba(0,0,0,0.05) 100%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.85) 100%)",
+							backdropFilter: "blur(1px)",
+							WebkitBackdropFilter: "blur(5px)",
+						}}></div>
 				</div>
 
-				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl relative z-10 py-12 sm:py-16 md:py-20">
-					<p className="accent-script text-base sm:text-xl md:text-4xl mb-2">
-						Meet the Founder
-					</p>
-					<h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-left text-white tracking-wide mb-1">
-						HARRY
-					</h1>
-					<p className="text-lime text-sm sm:text-base md:text-lg lg:text-xl font-semibold">
-						Founder & Director, Harry&apos;s JSY
-					</p>
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl relative z-10 lg:pt-12 text-center lg:text-right">
+					<style>{`
+						.text-blur-wrapper {
+							display: inline-block;
+							padding: 1rem 1.5rem;
+							border-radius: 0.5rem;
+						}
+						@media (min-width: 1024px) {
+							.text-blur-wrapper {
+								backdrop-filter: blur(2px);
+								-webkit-backdrop-filter: blur(2px);
+							}
+						}
+						@media (min-width: 640px) {
+							.text-blur-wrapper {
+								padding: 1.5rem 2rem;
+							}
+						}
+					`}</style>
+					<div className="text-blur-wrapper">
+						<p className="text-white-900 accent-script text-base sm:text-xl md:text-4xl mb-2">
+							Meet the Founder
+						</p>
+						<h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-white tracking-wide mb-1">
+							HARRY
+						</h1>
+						<p className="text-lime text-sm sm:text-base md:text-lg lg:text-xl font-semibold">
+							Founder & Director, Harry&apos;s JSY
+						</p>
+					</div>
 				</div>
 			</section>
 

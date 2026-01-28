@@ -40,129 +40,6 @@ interface SessionsData {
 	endDate: string;
 }
 
-// Legacy hardcoded schedule (fallback)
-const LEGACY_SCHEDULE = [
-	{
-		dayOfWeek: 1, // Monday
-		sessions: [
-			{
-				id: "mon-1",
-				typeId: "power-play",
-				typeName: "POWER PLAY",
-				startTime: "6:15am",
-				endTime: "7am",
-			},
-			{
-				id: "mon-2",
-				typeId: "power-play",
-				typeName: "POWER PLAY",
-				startTime: "6pm",
-				endTime: "6:45pm",
-			},
-		],
-	},
-	{
-		dayOfWeek: 2, // Tuesday
-		sessions: [
-			{
-				id: "tue-1",
-				typeId: "power-play",
-				typeName: "POWER PLAY",
-				startTime: "7am",
-				endTime: "7:45am",
-			},
-		],
-	},
-	{
-		dayOfWeek: 3, // Wednesday
-		sessions: [
-			{
-				id: "wed-1",
-				typeId: "lift-and-shift",
-				typeName: "LIFT AND SHIFT",
-				startTime: "6:15am",
-				endTime: "7am",
-			},
-			{
-				id: "wed-2",
-				typeId: "lift-and-shift",
-				typeName: "LIFT AND SHIFT",
-				startTime: "7:15am",
-				endTime: "8am",
-			},
-			{
-				id: "wed-3",
-				typeId: "lift-and-shift",
-				typeName: "LIFT AND SHIFT",
-				startTime: "4:30pm",
-				endTime: "5:15pm",
-				isPrivate: true,
-			},
-			{
-				id: "wed-4",
-				typeId: "lift-and-shift",
-				typeName: "LIFT AND SHIFT",
-				startTime: "5:45pm",
-				endTime: "6:30pm",
-			},
-		],
-	},
-	{
-		dayOfWeek: 4, // Thursday
-		sessions: [
-			{
-				id: "thu-1",
-				typeId: "power-play",
-				typeName: "POWER PLAY",
-				startTime: "6:15am",
-				endTime: "7am",
-			},
-			{
-				id: "thu-2",
-				typeId: "power-play",
-				typeName: "POWER PLAY",
-				startTime: "6pm",
-				endTime: "6:45pm",
-			},
-		],
-	},
-	{
-		dayOfWeek: 5, // Friday
-		sessions: [
-			{
-				id: "fri-1",
-				typeId: "lift-and-shift",
-				typeName: "LIFT AND SHIFT",
-				startTime: "6:15am",
-				endTime: "7am",
-			},
-			{
-				id: "fri-2",
-				typeId: "lift-and-shift",
-				typeName: "LIFT AND SHIFT",
-				startTime: "7:15am",
-				endTime: "8am",
-			},
-		],
-	},
-	{
-		dayOfWeek: 6, // Saturday
-		sessions: [
-			{
-				id: "sat-1",
-				typeId: "power-play",
-				typeName: "POWER PLAY",
-				startTime: "8am",
-				endTime: "8:45am",
-			},
-		],
-	},
-	{
-		dayOfWeek: 0, // Sunday
-		sessions: [],
-	},
-];
-
 const DAY_NAMES = ["SUN", "MON", "TUES", "WED", "THURS", "FRI", "SAT"];
 const MONTH_NAMES = [
 	"JANUARY",
@@ -178,22 +55,6 @@ const MONTH_NAMES = [
 	"NOVEMBER",
 	"DECEMBER",
 ];
-
-function getWeekDates() {
-	const today = new Date();
-	const dayOfWeek = today.getDay();
-	const monday = new Date(today);
-	monday.setDate(today.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
-
-	const dates: Date[] = [];
-	for (let i = 0; i < 7; i++) {
-		const date = new Date(monday);
-		date.setDate(monday.getDate() + i);
-		dates.push(date);
-	}
-
-	return { monday, dates };
-}
 
 function formatDateISO(date: Date): string {
 	return date.toISOString().split("T")[0];
@@ -441,41 +302,6 @@ export default function Timetable() {
 			{/* Page Header */}
 			<section className="py-8 sm:py-12 md:py-16">
 				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl">
-					<div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-						<div>
-							<div className="flex items-center mb-2">
-								<div className="triple-lines">
-									<span></span>
-								</div>
-								<h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-wide">
-									SCHEDULE
-								</h1>
-							</div>
-						</div>
-
-						{/* Week Navigation */}
-						<div className="flex flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-3 w-full md:w-auto">
-							<button
-								onClick={goToPreviousWeek}
-								disabled={currentWeekOffset === 0}
-								className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#1a1a1a] border border-lime rounded-lg text-white text-xs sm:text-sm font-semibold hover:border-lime disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
-								<span className="hidden sm:inline">← </span>Prev
-							</button>
-							{currentWeekOffset > 0 && (
-								<button
-									onClick={goToCurrentWeek}
-									className="px-3 py-1.5 sm:px-4 sm:py-2 bg-black border border-gray-800 rounded-lg text-white text-xs sm:text-sm font-semibold hover:bg-lime/30 transition-colors">
-									Today
-								</button>
-							)}
-							<button
-								onClick={goToNextWeek}
-								className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#1a1a1a] border border-lime rounded-lg text-white text-xs sm:text-sm font-semibold hover:border-lime transition-colors">
-								Next<span className="hidden sm:inline"> Week →</span>
-							</button>
-						</div>
-					</div>
-
 					{/* Month/Year Display */}
 					<div className="mt-4 text-center">
 						<p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-lime tracking-widest uppercase">
@@ -547,14 +373,37 @@ export default function Timetable() {
 				</div>
 			</section>
 
+			<section>
+				{/* Week Navigation */}
+				<div className="flex justify-center gap-2 sm:gap-3 w-full md:w-auto my-4">
+					<button
+						onClick={goToPreviousWeek}
+						disabled={currentWeekOffset === 0}
+						className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#1a1a1a] border border-lime rounded-lg text-white text-xs sm:text-sm font-semibold hover:border-lime disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+						<span className="hidden sm:inline">← </span>Prev
+					</button>
+					{currentWeekOffset > 0 && (
+						<button
+							onClick={goToCurrentWeek}
+							className="px-3 py-1.5 sm:px-4 sm:py-2 bg-black border border-gray-800 rounded-lg text-white text-xs sm:text-sm font-semibold hover:bg-lime/30 transition-colors">
+							Today
+						</button>
+					)}
+					<button
+						onClick={goToNextWeek}
+						className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#1a1a1a] border border-lime rounded-lg text-white text-xs sm:text-sm font-semibold hover:border-lime transition-colors">
+						Next<span className="hidden sm:inline"> Week →</span>
+					</button>
+				</div>
+			</section>
+
 			{/* Schedule Grid */}
 			<section className="py-8 md:py-12">
-				<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+				<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl ">
 					<div className="space-y-0">
 						{orderedDays.map((dayOfWeek, index) => {
 							const daySchedule = scheduleByDay.get(dayOfWeek);
 							const date = dates[index];
-							const dateISO = formatDateISO(date);
 							const isRestDay =
 								!daySchedule || daySchedule.sessions.length === 0;
 
@@ -588,14 +437,14 @@ export default function Timetable() {
 										</div>
 
 										{/* Sessions Container */}
-										<div className="flex-1 min-w-0">
+										<div className="flex-1 min-w-0 w-full flex justify-center sm:justify-start">
 											{isRestDay ?
 												<div className="py-8 text-center">
 													<p className="text-gray-600 text-sm tracking-wide uppercase">
 														Rest Day
 													</p>
 												</div>
-											:	<div className="space-y-6">
+											:	<div className="space-y-6 w-full max-w-md sm:max-w-none">
 													{/* Group sessions by type */}
 													{Object.values(
 														daySchedule!.sessions.reduce(
@@ -628,7 +477,7 @@ export default function Timetable() {
 																key={sessionGroup[0].typeName}
 																className="space-y-3">
 																{/* Session Type Header */}
-																<div className="flex items-center gap-3 mb-2">
+																<div className="flex items-center justify-center sm:justify-start gap-3 mb-2">
 																	<div
 																		className={`w-2 h-2 rounded-full ${colorClass}`}
 																	/>
@@ -642,7 +491,7 @@ export default function Timetable() {
 																</div>
 
 																{/* Sessions Grid - Better organized */}
-																<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
+																<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3 w-full">
 																	{sessionGroup.map((session) => (
 																		<SessionCard
 																			key={`${session.id}-${session.date}`}

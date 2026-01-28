@@ -84,7 +84,7 @@ export default function BookConsultation() {
 	return (
 		<div className="section-padding-lg">
 			<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-2xl">
-				<h1 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-12">
+				<h1 className="font-display text-4xl md:text-5xl text-white tracking-wide mb-12 text-center	">
 					Book Your Consultation
 				</h1>
 
@@ -101,7 +101,7 @@ export default function BookConsultation() {
 								value={formData.name}
 								onChange={handleChange}
 								required
-								className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
+								className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
 							/>
 						</div>
 
@@ -116,7 +116,7 @@ export default function BookConsultation() {
 								value={formData.email}
 								onChange={handleChange}
 								required
-								className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
+								className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
 							/>
 						</div>
 
@@ -131,7 +131,7 @@ export default function BookConsultation() {
 								value={formData.phone}
 								onChange={handleChange}
 								required
-								className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
+								className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
 							/>
 						</div>
 
@@ -148,7 +148,7 @@ export default function BookConsultation() {
 									placeholderText="dd/mm/yyyy"
 									required
 									minDate={new Date()}
-									className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
+									className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors"
 									wrapperClassName="w-full"
 								/>
 							</div>
@@ -163,7 +163,7 @@ export default function BookConsultation() {
 									value={formData.time}
 									onChange={handleChange}
 									required
-									className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors">
+									className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-700 text-gray-400 focus:border-lime focus:outline-none transition-colors">
 									<option value="">Select a time</option>
 									<option value="morning">Morning (06:00 - 12:00)</option>
 									<option value="afternoon">Afternoon (12:00 - 18:00)</option>
@@ -184,7 +184,7 @@ export default function BookConsultation() {
 										value="no"
 										checked={formData.hasInjuries === "no"}
 										onChange={handleChange}
-										className="w-4 h-4"
+										className="w-4 h-4 "
 									/>
 									<span className="text-white">No</span>
 								</label>
@@ -213,7 +213,7 @@ export default function BookConsultation() {
 									value={formData.injuries}
 									onChange={handleChange}
 									rows={4}
-									className="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors resize-none"
+									className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-700 text-white focus:border-lime focus:outline-none transition-colors resize-none"
 								/>
 							</div>
 						)}
@@ -221,7 +221,7 @@ export default function BookConsultation() {
 						<button
 							type="submit"
 							disabled={loading}
-							className="btn-lime w-full text-sm font-semibold tracking-widest uppercase disabled:opacity-50">
+							className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-700 text-white text-sm font-semibold tracking-widest uppercase hover:bg-lime-900 hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
 							{loading ? "BOOKING..." : "BOOK CONSULTATION"}
 						</button>
 

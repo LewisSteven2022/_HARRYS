@@ -4,6 +4,7 @@ import Link from "next/link";
 import SignOutButton from "./SignOutButton";
 import { prisma } from "@/lib/prisma";
 import CreditBalanceCard from "./CreditBalanceCard";
+import { getAdminStatus } from "@/lib/admin";
 
 // Helper to format date
 function formatDate(date: Date): string {
@@ -153,6 +154,9 @@ export default async function AccountPage() {
 		take: 10,
 	});
 
+	// Check admin status
+	const isAdmin = await getAdminStatus(user.id);
+
 	return (
 		<div className="py-16">
 			<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-4xl">
@@ -204,6 +208,13 @@ export default async function AccountPage() {
 								className="block text-center text-lime text-sm hover:underline">
 								Edit Profile
 							</Link>
+							{isAdmin && (
+								<Link
+									href="/admin"
+									className="block text-center text-lime text-sm hover:underline">
+									Admin
+								</Link>
+							)}
 							<SignOutButton />
 						</div>
 					</div>
