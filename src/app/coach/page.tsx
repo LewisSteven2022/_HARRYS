@@ -18,14 +18,14 @@ export default function Coach() {
 					/>
 				</div>
 
-				<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl relative z-10 py-20">
-					<p className="accent-script text-xl md:text-2xl mb-2">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl relative z-10 py-12 sm:py-16 md:py-20">
+					<p className="accent-script text-base sm:text-xl md:text-4xl mb-2">
 						Meet the Founder
 					</p>
-					<h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-white tracking-wide mb-4">
+					<h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-left text-white tracking-wide mb-1">
 						HARRY
 					</h1>
-					<p className="text-lime text-lg md:text-xl font-semibold">
+					<p className="text-lime text-sm sm:text-base md:text-lg lg:text-xl font-semibold">
 						Founder & Director, Harry&apos;s JSY
 					</p>
 				</div>
@@ -37,17 +37,17 @@ export default function Coach() {
 					<div className="grid lg:grid-cols-2 gap-12 items-start">
 						{/* Left - Main Bio */}
 						<div>
-							<div className="flex items-center mb-8">
+							<div className="flex items-center mb-6 sm:mb-8">
 								<div className="triple-lines">
 									<span></span>
 								</div>
-								<h2 className="font-display text-3xl md:text-4xl text-white tracking-wide">
+								<h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-white tracking-wide">
 									The Journey
 								</h2>
 							</div>
 
-							<div className="space-y-6 text-gray-300 leading-relaxed">
-								<p className="text-lg">
+							<div className="space-y-4 sm:space-y-6 text-gray-300 leading-relaxed">
+								<p className="text-base sm:text-lg">
 									After 8 years as a professional rugby player and Head Coach at
 									Asia&apos;s Flagship gym, I&apos;m returning home to Jersey to
 									help people move better, get fitter, and build the ultimate
@@ -85,8 +85,8 @@ export default function Coach() {
 
 						{/* Right - Credentials & Image */}
 						<div>
-							<div className="card-rounded-lg p-8 mb-8">
-								<h3 className="font-display text-2xl text-white mb-6 tracking-wide">
+							<div className="card-rounded-lg p-5 sm:p-6 md:p-8 mb-6 sm:mb-8">
+								<h3 className="font-display text-xl sm:text-2xl text-white mb-4 sm:mb-6 tracking-wide">
 									Credentials
 								</h3>
 

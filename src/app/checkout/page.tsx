@@ -190,10 +190,10 @@ export default function CheckoutPage() {
 
 	if (items.length === 0) {
 		return (
-			<div className="py-24">
-				<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-2xl text-center">
+			<div className="py-16 sm:py-20 md:py-24">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-2xl text-center">
 					<svg
-						className="w-20 h-20 mx-auto text-gray-700 mb-6"
+						className="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-gray-700 mb-4 sm:mb-6"
 						fill="none"
 						stroke="currentColor"
 						viewBox="0 0 24 24">
@@ -204,10 +204,10 @@ export default function CheckoutPage() {
 							d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
 						/>
 					</svg>
-					<h1 className="font-display text-4xl text-white tracking-wide mb-4">
+					<h1 className="font-display text-2xl sm:text-3xl md:text-4xl text-white tracking-wide mb-3 sm:mb-4 px-4">
 						YOUR BASKET IS EMPTY
 					</h1>
-					<p className="text-gray-400 mb-8">
+					<p className="text-gray-400 mb-6 sm:mb-8 px-4 text-sm sm:text-base">
 						Add some sessions to your basket before checking out.
 					</p>
 					<Link
@@ -226,24 +226,24 @@ export default function CheckoutPage() {
 	const remainingTotal = remainingItems * (items[0]?.price || 15);
 
 	return (
-		<div className="py-16">
-			<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+		<div className="py-8 sm:py-12 md:py-16">
+			<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-4xl">
 				{/* Header */}
-				<div className="mb-12">
+				<div className="mb-8 sm:mb-10 md:mb-12">
 					<div className="flex items-center mb-2">
 						<div className="triple-lines">
 							<span></span>
 						</div>
-						<h1 className="font-display text-5xl text-white tracking-wide">
+						<h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white tracking-wide">
 							CHECKOUT
 						</h1>
 					</div>
-					<p className="text-gray-400">
+					<p className="text-gray-400 text-sm sm:text-base">
 						Complete your booking by entering your details below.
 					</p>
 				</div>
 
-				<div className="grid lg:grid-cols-2 gap-12">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
 					{/* Order Summary */}
 					<div>
 						<h2 className="font-display text-2xl text-white tracking-wide mb-6">

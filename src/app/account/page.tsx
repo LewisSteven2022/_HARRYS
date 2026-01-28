@@ -34,12 +34,12 @@ export default async function AccountPage() {
 	// If Supabase isn't configured, show setup message
 	if (!isSupabaseConfigured()) {
 		return (
-			<div className="py-16">
-				<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl text-center">
-					<h1 className="font-display text-5xl text-white tracking-wide mb-4">
+			<div className="py-8 sm:py-12 md:py-16">
+				<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-4xl text-center">
+					<h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white tracking-wide mb-3 sm:mb-4 px-4">
 						AUTH NOT CONFIGURED
 					</h1>
-					<p className="text-gray-400 mb-8">
+					<p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base px-4">
 						Supabase authentication is not yet configured. Please set up your
 						environment variables.
 					</p>
@@ -155,14 +155,14 @@ export default async function AccountPage() {
 
 	return (
 		<div className="py-16">
-			<div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-4xl">
+			<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-4xl">
 				{/* Header */}
-				<div className="mb-12">
+				<div className="mb-8 sm:mb-10 md:mb-12">
 					<div className="flex items-center mb-2">
 						<div className="triple-lines">
 							<span></span>
 						</div>
-						<h1 className="font-display text-5xl text-white tracking-wide">
+						<h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white tracking-wide">
 							MY ACCOUNT
 						</h1>
 					</div>
@@ -182,9 +182,9 @@ export default async function AccountPage() {
 					}))}
 				/>
 
-				<div className="grid md:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
 					{/* Profile Card */}
-					<div className="bg-[#1a1a1a] rounded-lg p-6">
+					<div className="bg-[#1a1a1a] rounded-lg p-4 sm:p-5 md:p-6">
 						<h2 className="font-display text-xl text-white tracking-wide mb-4">
 							PROFILE
 						</h2>
@@ -209,7 +209,7 @@ export default async function AccountPage() {
 					</div>
 
 					{/* Fitness Tracking */}
-					<div className="bg-[#1a1a1a] rounded-lg p-6">
+					<div className="bg-[#1a1a1a] rounded-lg p-4 sm:p-5 md:p-6">
 						<h2 className="font-display text-xl text-white tracking-wide mb-4">
 							FITNESS TRACKING
 						</h2>
@@ -240,8 +240,8 @@ export default async function AccountPage() {
 					</div>
 
 					{/* Upcoming Sessions */}
-					<div className="bg-[#1a1a1a] rounded-lg p-6">
-						<h2 className="font-display text-xl text-white tracking-wide mb-4">
+					<div className="bg-[#1a1a1a] rounded-lg p-4 sm:p-5 md:p-6">
+						<h2 className="font-display text-lg sm:text-xl text-white tracking-wide mb-3 sm:mb-4">
 							UPCOMING SESSIONS
 						</h2>
 						{upcomingBookings.length > 0 ?
@@ -291,8 +291,8 @@ export default async function AccountPage() {
 				</div>
 
 				{/* Order History */}
-				<div className="mt-8 bg-[#1a1a1a] rounded-lg p-6">
-					<h2 className="font-display text-xl text-white tracking-wide mb-6">
+				<div className="mt-6 sm:mt-8 bg-[#1a1a1a] rounded-lg p-4 sm:p-5 md:p-6">
+					<h2 className="font-display text-lg sm:text-xl text-white tracking-wide mb-4 sm:mb-6">
 						ORDER HISTORY
 					</h2>
 					{orders.length > 0 ?
